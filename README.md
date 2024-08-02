@@ -1,4 +1,4 @@
-# Front64
+# Front64  ///Funcional
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
 
