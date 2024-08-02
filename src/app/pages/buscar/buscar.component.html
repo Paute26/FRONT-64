@@ -1,0 +1,62 @@
+<div class="contenedor">
+
+    <div class="izquierda">
+        <h1>Obtener Lista</h1>
+        <button (click)="actualizarProductos()">Actualizar</button>
+        <div class="tabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Serial</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let producto of lista">
+                        <td>{{ producto.id }}</td>
+                        <td>{{ producto.nombre }}</td>
+                        <td>{{ producto.descripcion }}</td>
+                        <td>{{ producto.caracteristica }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="derecha">
+        <h1>Buscar</h1>
+        <div class="search">
+            <form [formGroup]="searchProductoForm" (ngSubmit)="buscarProductos()">
+                <input formControlName="caracteristica" type="text" placeholder="Buscar por característica o serial"><br><br>
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+        <!-- Tabla para resultados de búsqueda -->
+        <div class="resultado-tabla" *ngIf="listaSearch.length > 0">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Serial</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let producto of listaSearch">
+                        <td>{{ producto.id }}</td>
+                        <td>{{ producto.nombre }}</td>
+                        <td>{{ producto.descripcion }}</td>
+                        <td>{{ producto.caracteristica }}</td>
+                        <td>
+                            <button (click)="eliminarProducto(producto)" style="background-color:red;color:white;">X</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p *ngIf="listaSearch.length === 0 && searchProductoForm.get('caracteristica')?.value">No se encontraron productos.</p>
+    </div>
+</div>

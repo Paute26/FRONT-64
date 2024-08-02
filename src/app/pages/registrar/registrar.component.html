@@ -1,0 +1,28 @@
+<div class="contenedor">
+    <div class="izquierda">
+      <h1>Ingresar Producto</h1>
+      <form [formGroup]="crearProductoForm" (ngSubmit)="onCrearSubmit()">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" formControlName="nombre" required><br><br>
+        <label for="descripcion">Descripcion:</label><br>
+        <input type="text" id="descripcion" formControlName="descripcion" required><br><br>
+        <label for="caracteristica">Serial:</label><br>
+        <input type="text" id="caracteristica" formControlName="caracteristica"><br><br>
+        <button type="submit">Registrar</button>
+      </form>
+    </div>
+    <div class="derecha">
+      <h1>Actualizar Producto</h1>
+      <form [formGroup]="actualizarProductoForm" (ngSubmit)="onActualizarSubmit()">
+        <label for="id">Id:</label><br>
+        <input type="text" id="id" formControlName="id" required><br><br>
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" formControlName="nombre" required><br><br>
+        <label for="descripcion">Descripcion:</label><br>
+        <input type="text" id="descripcion" formControlName="descripcion" required><br><br>
+        <label for="caracteristica">Serial:</label><br>
+        <input type="text" id="caracteristica" formControlName="caracteristica"><br><br>
+        <button type="submit">Actualizar</button>
+      </form>
+    </div>
+  </div>

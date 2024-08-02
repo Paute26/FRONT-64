@@ -1,0 +1,36 @@
+.contenedor{
+    margin-top: 10px;
+    margin: top 50%;
+    display: grid;
+    grid-auto-flow: column;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.izquierda{
+    background-color: #63e8ff;
+    align-items: center;
+    text-align: center;
+    margin: 1px;
+}
+
+.derecha{
+    background-color: aquamarine;
+    align-items: center;
+    text-align: center;
+    margin: 1px;
+}
+
+.izquierda button, .derecha button{
+    background-color: #002C5B;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.izquierda button:hover, .derecha button:hover{
+    background-color: #004289;
+    color: white;
+}
+.izquierda button:active, .derecha button:active{
+    background-color: #00264e;
+    color: white;
+}
